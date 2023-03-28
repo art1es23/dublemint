@@ -1,0 +1,70 @@
+.currency-add
+    &-popup
+        display: flex
+        flex-direction: column
+        position: fixed
+        inset: 0
+        align-items: center
+        background-color: rgb(0 0 0 / 95%)
+        padding: 2.5rem clamp( 1.5rem, 5vw, 4.75rem)
+        gap: max(1.25vw, 1.5rem)
+
+        &-header
+            display: flex
+            flex-direction: column
+            width: 100%
+            gap: 1.5rem
+            align-items: center
+        
+        &__title
+            text-align: center
+            font-size: clamp(1.1rem, 1.5vw, 2.25rem)
+            width: 100%
+
+    &-input
+        font-size: 1rem
+        width: 100%
+        padding: 0.75rem 1rem
+        border-bottom: 1px solid $white
+
+        &-wrapper
+            width: 100%
+
+.currency-list
+    display: flex
+    flex-direction: column
+    width: 100%
+    text-align: left
+    overflow-y: auto
+
+    &::-webkit-scrollbar 
+        width: 8px
+
+    &::-webkit-scrollbar-track 
+        background-color: rgba(6, 9, 19, 0.65)
+        border-radius: 50px
+
+    &::-webkit-scrollbar-thumb 
+        background-color: $burgundy
+        border-radius: 50px
+
+    &__item
+        padding: 0.65rem 1rem
+        display: flex
+        width: 100%
+        text-align: left
+        cursor: pointer
+        &:is(:hover, :active, :focus)
+            background-color: rgba(6, 9, 19, 0.8)
+
+.button-close
+    width: clamp(12.5rem, 10vw, 20rem)
+
+@media screen and (min-width: 550px)
+    .currency-add
+        &-popup
+            &-header
+                flex-direction: row-reverse
+                justify-content: space-between
+            &__title
+                width: auto
